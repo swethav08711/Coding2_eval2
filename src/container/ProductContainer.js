@@ -2,15 +2,10 @@ import React from "react"
 import { useSelector } from "react-redux"
 
 const ProductContainer = () => {
-  const product = useSelector(state => state.allProducts.product)
+  const products = useSelector(state => state.allProducts.products)
 
-  const { id, name, price } = product[0]
-  console.log(product)
-  return (
-    <div>
-      <div>{name}</div>
-    </div>
-  )
+  console.log(products)
+  return <div></div>
 }
 
 export default ProductContainer
