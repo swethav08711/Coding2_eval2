@@ -1,5 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 
 const ProductContainer = () => {
   const products = useSelector(state => state.allProducts.products)
@@ -7,11 +8,13 @@ const ProductContainer = () => {
     const { id, country_of_origin, description, image, name, price } = product
     return (
       <div key={id}>
-        <div>{country_of_origin}</div>
-        <div>{name}</div>
-        <div>{description}</div>
-        <div>₹ {price}</div>
-        <img src={image} alt="asd" />
+        <Link to={`/product/${id}`}>
+          <div>{country_of_origin}</div>
+          <div>{name}</div>
+          <div>{description}</div>
+          <div>₹ {price}</div>
+          <img src={image} alt="asd" />
+        </Link>
       </div>
     )
   })
